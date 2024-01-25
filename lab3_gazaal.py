@@ -128,10 +128,11 @@ Try to identfy where you can use a for-loop.
 def draw_rectangle(length, width):
     pen = turtle.Turtle()
     pen.speed(1)
-    for i in range (4):       
+    for i in range (2):       
         pen.forward(length)
         pen.left(90)
         pen.forward(width)
+        pen.left(90)
 
     pen.shape("blank")
     pen.clear()
@@ -199,13 +200,16 @@ def draw_concentric_circles(num_circles):
     pen.speed(5)
     pen.up()
     for i in range(num_circles):
-        pen.circle(radius)
         pen.down()
-        pen.forward(i)
+        pen.circle(radius)
         pen.up()
         radius = (radius + radius_increase)
-        pen.down()
-        
+        pen.right(90)
+        pen.forward(radius_increase)
+        pen.left(90)
+
+
+
 
 
         
